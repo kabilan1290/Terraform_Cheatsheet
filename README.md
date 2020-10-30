@@ -1,7 +1,7 @@
 # Terraform_Cheatsheet
 Terraform is the infrastructure as code tool from HashiCorp. It is a tool for building, changing, and managing infrastructure in a safe, repeatable way. Operators and Infrastructure teams can use Terraform to manage environments with a configuration language called the HashiCorp Configuration Language (HCL) for human-readable, automated deployments.
 
-TO download:
+To download:
 https://www.terraform.io/downloads.html
 
 Download the binary and move it to the executable path - mv ~/Downloads/terraform /usr/local/bin/
@@ -158,3 +158,55 @@ This will delete the workspace and associated variables.
 Setting up a Policy:
 
 we can navigate to set policy tabs in terraform to create a policy or we can use sentinel,Sentinel is an embedded policy-as-code framework integrated with various HashiCorp products. 
+
+Terraform with Azure and GCP:
+
+The steps were same as we done in the AWS but there will be change in variables.
+
+Azure Config:
+```
+# Configure the Azure provider
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = ">= 2.26"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "rg" {
+  name     = "myTFResourceGroup"
+  location = "westus2"
+}
+```
+
+Google config:
+
+```
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+  }
+}
+
+provider "google" {
+  version = "3.5.0"
+
+  credentials = file("<NAME>.json")
+
+  project = "<PROJECT_ID>"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+```
