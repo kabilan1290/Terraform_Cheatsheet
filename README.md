@@ -210,3 +210,5 @@ resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
 }
 ```
+
+**If you want to be average, do what others do. If you want to be awesome, do what no one does.**
