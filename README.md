@@ -115,3 +115,20 @@ credentials "app.terraform.io" {
 }
 ```
 We need to add the generated api token in the above field and the respective organisation and workspace name given during the signup.
+
+We can also link github as an workspace for terraform.
+
+We can add the required aws keys in environment variables tab.
+
+     AWS_ACCESS_KEY_ID with the Access key ID.
+     AWS_SECRET_ACCESS_KEY with the Secret access key.
+
+
+We also included two Terraform Variables in the example configuration. Scroll up to the "Terraform Variables" section to set those up now.
+
+    db_write_capacity with the number 1
+    db_read_capacity with the number 2
+
+Now we can use the "Queue Plan" button to start a plan.
+
+We will then asked to confirm the plan,upon confirming the chnages will be applied.
