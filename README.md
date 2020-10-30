@@ -51,7 +51,7 @@ Use commands - terraform init && teraform apply
 
 terraform show - To inspect current state.
 
-Changing infrastructure:
+# Changing infrastructure:
 
 Change the amazon machine image value in example.tf.
 
@@ -72,7 +72,7 @@ Destroying infrastructure:
 
 Terraform destroy - Destroys the infrastructure.
 
-Input variables:
+# Input variables:
 
 variables.tf
 ```
@@ -96,7 +96,7 @@ To include variables,we can create a file named sensitive.tfvars.
 
 terraform output ip - It will output the ip address of the instance created.
 
-Store Remotely:
+# Store Remotely:
 
 you can also store the state of the instance in terraform cloud.
 
@@ -148,18 +148,18 @@ Speculative plans are
     individual - they can only be accessed from a direct link on GitHub PR
     non-destructive - no action is taken, no infrastructure is provisioned
     
-Delete a Workspace:
+# Delete a Workspace:
 
 >> Go to settings and click delete workspace.
 >> Enter the name of the workspace and confirm deletion.
 
 This will delete the workspace and associated variables.
 
-Setting up a Policy:
+# Setting up a Policy:
 
 we can navigate to set policy tabs in terraform to create a policy or we can use sentinel,Sentinel is an embedded policy-as-code framework integrated with various HashiCorp products. 
 
-Terraform with Azure and GCP:
+# Terraform with Azure and GCP:
 
 The steps were same as we done in the AWS but there will be change in variables.
 
