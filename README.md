@@ -131,4 +131,30 @@ We also included two Terraform Variables in the example configuration. Scroll up
 
 Now we can use the "Queue Plan" button to start a plan.
 
-We will then asked to confirm the plan,upon confirming the chnages will be applied.
+We will then asked to confirm the plan,upon confirming the changes will be applied.
+
+    Runs shows a list of all of the plan and apply actions you have taken with this workspace.
+    States shows a list of the entire tfstate file of your workspace after each successful run.
+    Variables will let you configure Terraform variables and environment variables.
+    Settings contains all of the other configuration for your workspace.
+    Queue plan will let you start a new plan.
+
+Upon receiving a Pull request, terraform will trigger a Speculative plans.
+
+Speculative plans are
+
+    plan-only runs - they show a set of possible changes that cannot be applied
+    temporary - they won't appear in any log within Terraform Cloud
+    individual - they can only be accessed from a direct link on GitHub PR
+    non-destructive - no action is taken, no infrastructure is provisioned
+    
+Delete a Workspace:
+
+>> Go to settings and click delete workspace.
+>> Enter the name of the workspace and confirm deletion.
+
+This will delete the workspace and associated variables.
+
+Setting up a Policy:
+
+we can navigate to set policy tabs in terraform to create a policy or we can use sentinel,Sentinel is an embedded policy-as-code framework integrated with various HashiCorp products. 
